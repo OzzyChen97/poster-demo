@@ -205,8 +205,8 @@
                     // Add row label
                     const labelEl = document.createElement('div');
                     // 響應式：手機上 p-1 text-xs, 桌面上 p-2 text-sm
-                    // 修正：移除 min-h 類別，讓所有列的高度保持一致 (回到 List 1 的自然高度)
-                    labelEl.className = 'p-1 sm:p-2 font-semibold text-center text-xs sm:text-sm text-gray-300 flex items-center justify-center';
+                    // 修正：新增 h-10 sm:h-12 來強制所有列高度一致
+                    labelEl.className = 'p-1 sm:p-2 font-semibold text-center text-xs sm:text-sm text-gray-300 flex items-center justify-center h-10 sm:h-12';
                     labelEl.textContent = `List ${i + 1}`;
                     gridBody.appendChild(labelEl); // TO THIS
 
@@ -214,9 +214,8 @@
                     row.forEach((cell, j) => {
                         const cellEl = document.createElement('div');
                         // 響應式：手機上 p-1 text-xs, 桌面上 p-2 text-sm
-                        // 修正：新增 flex items-center justify-center 確保垂直置中
-                        // 修正：移除 min-h 類別，讓所有列的高度保持一致 (回到 List 1 的自然高度)
-                        cellEl.className = `p-1 sm:p-2 font-bold text-center text-xs sm:text-sm rounded-md transition-all duration-300 ${STATUS_MAP[cell].class} flex items-center justify-center`;
+                        // 修正：新增 h-10 sm:h-12 來強制所有列高度一致
+                        cellEl.className = `p-1 sm:p-2 font-bold text-center text-xs sm:text-sm rounded-md transition-all duration-300 ${STATUS_MAP[cell].class} flex items-center justify-center h-10 sm:h-12`;
                         cellEl.textContent = STATUS_MAP[cell].text;
 
                         // Highlight the active diagonal
